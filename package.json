@@ -1,0 +1,20 @@
+{
+  "name": "Unblock",
+  "version": "1.0.0",
+  "description": "Unblock Haket Presentation",
+  "scripts": {
+    "start": "reveal-md slides.md --css src/myleague.css --watch",
+    "static": "reveal-md slides.md --assets-dir '' --static-dirs 'src'  --css src/myleague.css --highlight-theme default --static",
+    "publish": "npm run static && npm run cname && cd _static && surge",
+    "cname": "[ -d _static ] || mkdir _static; [ -f _static/CNAME ] || echo $(xkcdpass).surge.sh > _static/CNAME"
+  },
+  "author": "Dmytri Kleiner <dk@trick.ca>",
+  "author": "Baruch Gottlieb <baruch@trick.ca>",
+  "dependencies": {
+    "reveal-md": "^5.3.3"
+  },
+  "optionalDependencies": {
+    "surge": "^0.20.1",
+    "xkcdpass": "^0.1.1"
+  }
+}
